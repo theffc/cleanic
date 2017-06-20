@@ -1,32 +1,42 @@
 <?php
 
-require_once 'database.php';
+require_once  '../../config/defaults.php';
 require_once 'user.php';
 
-public function login(User $user)
-{
+
+function login(Usuario $user) {
    $query = "SELECT username, password FROM Usuario WHERE username = '$user->username' AND password = '$user->password'";
 
    $conn = connectToDatabase();
-
-   header('Content-Type: application/json');
    $result = $conn->query($query);
    if ($result->num_rows == 0 || $result == FALSE) {
-     echo json_encode(LoginResponse(FALSE));
+      return new LoginResponse(FALSE);
    } else {
-     echo json_encode(LoginResponse(TRUE));
+     return new LoginResponse(TRUE);
    }
 }
 
 
 class LoginResponse
 {
-   public isAccepted;
+   public $isAccepted;
 
-   public function __construct($isAccepted)
-   {
+   public function __construct($isAccepted) {
       $this->isAccepted = $isAccepted;
    }
+}
+
+# just for tests
+function testLogin() {
+   $assoc = array('username' => 'fred@cleanic.com', 'password' => 'bla');
+
+   $user = new Usuario($assoc);
+   print_r($user);
+
+   $result = login($user);
+
+   header('Content-Type: application/json');
+   echo json_encode($result);
 }
 
 ?>
