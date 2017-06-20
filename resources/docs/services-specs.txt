@@ -1,0 +1,29 @@
+﻿
+# Serviços
+
+## Tela de Agendamento
+	- recebe todas as possíveis especialidades médicas (as quais são obtidas de acordo com todos os médicos cadastrados)
+	- fornece uma especialidade médica, e recebe os médicos daquela especialidade
+	- fornece um médico, e recebe todos os horários disponíveis daquele médico
+	- fornece um formulário de agendamento, e consequentemente informações para cadastro de um novo cliente (paciente)
+
+## Tela de Contato
+	- OK fornece um formulário simples para cadastrar um Contato
+
+## Tela de Login
+	- fornece um formulário simples para login de usuário, e recebe se foi possível ou não realizar o login.
+
+## Tela de Cadastro de Funcionários (Novo Funcionário)
+	- OK fornece um formulário com bastante informação para cadastro de um funcionário
+	- fornece um número de CEP, e recebe informações (logradouro, bairro, cidade) daquele CEP em específico
+
+## Tela de Listagem dos Funcionários
+	- OK recebe todos os modelos de funcionários que estão no banco de dados 
+
+## Tela de Listagem dos Contatos
+	- recebe todos os modelos de contatos que estão no banco de dados
+
+## Tela de Listagem dos Agendamentos
+	- recebe um modelo modificado do agendamento, que deve conter o nome e especialidade do médico, e o nome e o telefone do paciente que agendou a consulta.
+
+
