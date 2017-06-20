@@ -39,4 +39,12 @@ Arquivos de desenvolvimento. Separei as pastas por funcionalidade, ou seja, a pa
   * user.php representa o modelo (regras de negocio).
   * user-controller.php representa o controle (integração da exibição com o modelo).
   * user-service.php representa os serviços atrelados ao usuário. (lógica do login ficaria aqui por exemplo, de forma que o public só chame os métodos).
+  
+### templates
+
+Arquivos de template (php + html). Separei as pastas em components (footer, header, etc) e em pages (home, admin, etc), de forma que fique facil de importar layouts diferentes.
+
+### tests
+
+Arquivos de teste...
 
