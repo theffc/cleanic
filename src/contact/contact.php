@@ -1,6 +1,6 @@
 <?php
 
-class Contact{
+class Contato{
 
 	public $nomeCliente;
 	public $emailCliente;
