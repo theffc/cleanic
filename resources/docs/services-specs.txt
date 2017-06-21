@@ -11,7 +11,7 @@
 	- OK - contato-service: fornece um formulário simples para cadastrar um Contato
 
 ## Tela de Login
-	- fornece um formulário simples para login de usuário, e recebe se foi possível ou não realizar o login.
+	- OK - user-service: fornece um formulário simples para login de usuário, e recebe se foi possível ou não realizar o login.
 
 ## Tela de Cadastro de Funcionários (Novo Funcionário)
 	- OK - funcionario-service: fornece um formulário com bastante informação para cadastro de um funcionário
