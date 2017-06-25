@@ -15,9 +15,7 @@ class Agendamento{
       $this->dataAgendamento = $assoc['dataAgendamento'];
       $this->horaAgendamento = $assoc['horaAgendamento'];
       $this->codFuncionario = $assoc['codFuncionario'];
-      $this->codPaciente = $assoc['codPaciente';]
-   
+      $this->codPaciente = $assoc['codPaciente'];  
    }
 }
-
 ?>
