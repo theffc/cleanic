@@ -15,7 +15,7 @@
 
 ## Tela de Cadastro de Funcionários (Novo Funcionário)
 	- OK - funcionario-service: fornece um formulário com bastante informação para cadastro de um funcionário
-	- fornece um número de CEP, e recebe informações (logradouro, bairro, cidade) daquele CEP em específico
+	- OK -fornece um número de CEP, e recebe informações (logradouro, bairro, cidade) daquele CEP em específico
 
 ## Tela de Listagem dos Funcionários
 	- OK - funcionario-service: recebe todos os modelos de funcionários que estão no banco de dados 
@@ -24,6 +24,6 @@
 	- OK - contato-service: recebe todos os modelos de contatos que estão no banco de dados
 
 ## Tela de Listagem dos Agendamentos
-	- recebe um modelo modificado do agendamento, que deve conter o nome e especialidade do médico, e o nome e o telefone do paciente que agendou a consulta.
+	- OK - recebe um modelo modificado do agendamento, que deve conter o nome e especialidade do médico, e o nome e o telefone do paciente que agendou a consulta.
 
 
