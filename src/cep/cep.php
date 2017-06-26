@@ -1,7 +1,7 @@
 <?php
 
-class CEP{
-
+class CEP
+{
 	public $cep;
 	public $logradouro;
 	public $bairro;
@@ -10,13 +10,11 @@ class CEP{
 
 	public function __construct(array $assoc)
    {
-
-      $this->cep = $assoc['cep'];
-      $this->logradouro = $assoc['logradouro '];
+      $this->cep = $assoc['CEP'];
+      $this->logradouro = $assoc['logradouro'];
       $this->bairro = $assoc['bairro'];
       $this->cidade = $assoc['cidade'];
       $this->estado = $assoc['estado'];
-   
    }
 }
 
