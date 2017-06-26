@@ -11,17 +11,17 @@
 		</div>
 		<div id="navbar" class="navbar-collapse collapse">
 			<ul class="nav navbar-nav">
-				<li class="active">
-					<a href="#home">Home</a>
+				<li class="active" data-nav-holder-paginator>
+					<a href="#home" data-nav-paginator>Home</a>
 				</li>
-				<li>
-					<a href="#about">Galeria</a>
+				<li class="" data-nav-holder-paginator>
+					<a href="#gallery" data-nav-paginator>Galeria</a>
 				</li>
-				<li>
-					<a href="#contact">Contato</a>
+				<li class="" data-nav-holder-paginator>
+					<a href="#contact" data-nav-paginator>Contato</a>
 				</li>
-				<li>
-					<a href="#scheduling">Agendamento</a>
+				<li class="" data-nav-holder-paginator>
+					<a href="#scheduling" data-nav-paginator>Agendamento</a>
 				</li>
 			</ul>
 			<ul class="nav navbar-nav navbar-right">
