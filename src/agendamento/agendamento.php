@@ -1,7 +1,7 @@
 <?php
 
-class Agendamento{
-
+class Agendamento
+{
 	public $codAgendamento;
 	public $dataAgendamento;
 	public $horaAgendamento;
@@ -9,13 +9,12 @@ class Agendamento{
    public $codPaciente;
 
 	public function __construct(array $assoc)
-   {
-
+	{
       $this->codAgendamento = $assoc['codAgendamento'];
       $this->dataAgendamento = $assoc['dataAgendamento'];
       $this->horaAgendamento = $assoc['horaAgendamento'];
       $this->codFuncionario = $assoc['codFuncionario'];
-      $this->codPaciente = $assoc['codPaciente'];  
+      $this->codPaciente = $assoc['codPaciente'];
    }
 }
 ?>
