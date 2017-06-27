@@ -1,7 +1,7 @@
 <?php
 
-class AgendamentoModificado{
-
+class AgendamentoModificado
+{
 	public $nomeMedico;
 	public $especialidadeMedico;
    public $nomePaciente;
@@ -9,11 +9,10 @@ class AgendamentoModificado{
 
 	public function __construct(array $assoc)
    {
-
-      $this->nomeMedico = $assoc['nomeFunc'];
-      $this->especialidadeMedico = $assoc['especialidadeFunc'];
-      $this->nomePaciente = $assoc['nomePac'];
-      $this->telPaciente = $assoc['telPac'];  
+      $this->nomeMedico = htmlspecialchars_decode($assoc['nomeFunc']);
+      $this->especialidadeMedico = htmlspecialchars_decode($assoc['especialidadeFunc']);
+      $this->nomePaciente = htmlspecialchars_decode($assoc['nomePac']);
+      $this->telPaciente = $assoc['telPac'];
    }
 }
 ?>
