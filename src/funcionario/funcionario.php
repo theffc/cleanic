@@ -15,15 +15,15 @@ class Funcionario
 
    function __construct(array $assoc) {
       $this->idFunc = $assoc["idFunc"];
-      $this->nomeFunc = $assoc["nomeFunc"];
+      $this->nomeFunc = htmlspecialchars_decode($assoc["nomeFunc"]);
       $this->dataNascFunc = $assoc["dataNascFunc"];
       $this->sexoFunc = $assoc["sexoFunc"];
       $this->estadoCivilFunc = $assoc["estadoCivilFunc"];
       $this->cargoFunc = $assoc["cargoFunc"];
-      $this->especialidadeFunc = $assoc["especialidadeFunc"];
+      $this->especialidadeFunc = htmlspecialchars_decode($assoc["especialidadeFunc"]);
       $this->CPF = $assoc["CPF"];
       $this->RG = $assoc["RG"];
-      $this->docsFunc = $assoc["docsFunc"];
+      $this->docsFunc = htmlspecialchars_decode($assoc["docsFunc"]);
    }
 }
 

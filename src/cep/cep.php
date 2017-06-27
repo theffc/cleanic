@@ -11,10 +11,10 @@ class CEP
 	public function __construct(array $assoc)
    {
       $this->cep = $assoc['CEP'];
-      $this->logradouro = $assoc['logradouro'];
-      $this->bairro = $assoc['bairro'];
-      $this->cidade = $assoc['cidade'];
-      $this->estado = $assoc['estado'];
+      $this->logradouro = htmlspecialchars_decode($assoc['logradouro']);
+      $this->bairro = htmlspecialchars_decode($assoc['bairro']);
+      $this->cidade = htmlspecialchars_decode($assoc['cidade']);
+      $this->estado = htmlspecialchars_decode($assoc['estado']);
    }
 }
 

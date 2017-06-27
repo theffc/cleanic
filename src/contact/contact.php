@@ -1,7 +1,7 @@
 <?php
 
-class Contato{
-
+class Contato
+{
 	public $nomeCliente;
 	public $emailCliente;
 	public $motivoContato;
@@ -9,12 +9,10 @@ class Contato{
 
 	public function __construct(array $assoc)
    {
-
-      $this->nomeCliente = $assoc['nomeCliente'];
+      $this->nomeCliente = htmlspecialchars_decode($assoc['nomeCliente']);
       $this->emailCliente = $assoc['emailCliente'];
       $this->motivoContato = $assoc['motivoContato'];
-      $this->mensagemContato = $assoc['mensagemContato'];
-   
+      $this->mensagemContato = htmlspecialchars_decode($assoc['mensagemContato']);
    }
 }
 

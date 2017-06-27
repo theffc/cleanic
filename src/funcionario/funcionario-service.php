@@ -13,10 +13,10 @@ function listAllFuncionarios() {
    while ($assoc = $result->fetch_assoc()) {
       array_push($funcionarios, new Funcionario($assoc));
    }
-
-   return json_encode($funcionarios);
+   return $funcionarios;
 }
 
+// returns TRUE if successful, and FALSE on failure.
 function addFuncionario(Funcionario $funcionario) {
    $query = "INSERT INTO Funcionario (idFunc, nomeFunc, dataNascFunc, sexoFunc, estadoCivilFunc, cargoFunc, especialidadeFunc, CPF, RG, docsFunc) VALUES ('$funcionario->idFunc', '$funcionario->nomeFunc', '$funcionario->dataNascFunc', '$funcionario->sexoFunc', '$funcionario->estadoCivilFunc', '$funcionario->cargoFunc', '$funcionario->especialidadeFunc', '$funcionario->CPF', '$funcionario->RG', '$funcionario->docsFunc')";
 
@@ -32,10 +32,9 @@ function listAllDoctors() {
    $result = $db->query($query);
 
    $doctors = array();
-   while ($doctor = $result->fetch_assoc()) {
-      array_push($doctors, $doctor);
+   while ($assoc = $result->fetch_assoc()) {
+      array_push($doctors, new Funcionario($assoc));
    }
-
    return $doctors;
 }
 
@@ -46,10 +45,9 @@ function listDoctorsOfSpeciality($speciality) {
    $result = $db->query($query);
 
    $doctors = array();
-   while ($doctor = $result->fetch_assoc()) {
-      array_push($doctors, $doctor);
+   while ($assoc = $result->fetch_assoc()) {
+      array_push($doctors, new Funcionario($assoc));
    }
-
    return $doctors;
 }
 
