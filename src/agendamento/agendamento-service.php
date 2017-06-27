@@ -27,6 +27,13 @@ function ListaAgendamento(){
 
 	print_r($agendamentosMod);
     return json_encode($agendamentosMod);
+}
+
+
+function ListaHorariosDisponiveis($idMedico){
+
+	$query = "SELECT horaAgendamento FROM Funcionario WHERE idFunc = '$idMedico'";
+
 
 }
 ?>
