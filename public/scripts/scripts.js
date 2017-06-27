@@ -11,7 +11,8 @@ $(document).ready(function() {
 	function init() {
 		var components = [
 			MainPaginator,
-			GalleryBehavior
+			GalleryBehavior,
+			SchedulingBehavior
 		];
 
 		initializeComponents(components);

@@ -25,7 +25,9 @@
 				</li>
 			</ul>
 			<ul class="nav navbar-nav navbar-right">
-
+				<li class="">
+					<a href="#login">Login</a>
+				</li>
 			</ul>
 		</div>
 	</div>

@@ -16,8 +16,11 @@
 		<?php require_once(__TEMPLATES__ . '/components/header/header-0001.php'); ?>
 
 		<?php require_once(__TEMPLATES__ . '/components/main/home.php'); ?>
+
 		<?php require_once(__TEMPLATES__ . '/components/main/gallery.php'); ?>
+
 		<?php require_once(__TEMPLATES__ . '/components/main/contact.php'); ?>
+
 		<?php require_once(__TEMPLATES__ . '/components/main/scheduling.php'); ?>
 
 		<?php require_once(__TEMPLATES__ . '/components/footer/footer-0001.php'); ?>
