@@ -1,5 +1,5 @@
 ﻿
-# Serviços - INtegração API
+# Serviços - Integração API
 
 ## Tela de Agendamento
 	- funcionario-service: recebe todas as possíveis especialidades médicas (as quais são obtidas de acordo com todos os médicos cadastrados)
@@ -8,7 +8,7 @@
 	- fornece um formulário de agendamento, e consequentemente informações para cadastro de um novo cliente (paciente)
 
 ## Tela de Contato
-	- contato-service: fornece um formulário simples para cadastrar um Contato
+	- OK - contato-service: fornece um formulário simples para cadastrar um Contato
 
 ## Tela de Login
 	- OK - user-service: fornece um formulário simples para login de usuário, e recebe se foi possível ou não realizar o login.
@@ -24,6 +24,6 @@
 	- contato-service: recebe todos os modelos de contatos que estão no banco de dados
 
 ## Tela de Listagem dos Agendamentos
-	- recebe um modelo modificado do agendamento, que deve conter o nome e especialidade do médico, e o nome e o telefone do paciente que agendou a consulta.
+	- OK - recebe um modelo modificado do agendamento, que deve conter o nome e especialidade do médico, e o nome e o telefone do paciente que agendou a consulta.
 
 
