@@ -26,6 +26,7 @@ ScheduleAdd.prototype = {
 		var $element = $('#scheduling-time');
 		$element.empty();
 
+		data.sort();
 		$element.append('<option value=""></option>');
 		for (var i = 0; i < data.length; i++) {
 			$element.append('<option value="' + data[i] + '">' + data[i] + '</option>');
