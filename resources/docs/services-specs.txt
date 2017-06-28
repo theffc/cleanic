@@ -4,7 +4,7 @@
 ## Tela de Agendamento
 	- funcionario-service: recebe todas as possíveis especialidades médicas (as quais são obtidas de acordo com todos os médicos cadastrados)
 	- funcionario-service: fornece uma especialidade médica, e recebe os médicos daquela especialidade
-	-  OK - fornece um médico, e recebe todos os horários disponíveis daquele médico
+	-  OK ::: lista-horarios-disponiveis.phh, POST 'idMedico','dataAgendamento' // YYYY-MM-DD fornece um médico, e recebe todos os horários disponíveis daquele médico
 	- fornece um formulário de agendamento, e consequentemente informações para cadastro de um novo cliente (paciente)
 
 ## Tela de Contato
@@ -24,6 +24,6 @@
 	- contato-service: recebe todos os modelos de contatos que estão no banco de dados
 
 ## Tela de Listagem dos Agendamentos
-	- OK - recebe um modelo modificado do agendamento, que deve conter o nome e especialidade do médico, e o nome e o telefone do paciente que agendou a consulta.
+	- OK ::: agendamento-list.php, GET // recebe um modelo modificado do agendamento, que deve conter o nome e especialidade do médico, e o nome e o telefone do paciente que agendou a consulta.
 
 
