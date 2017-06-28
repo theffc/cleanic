@@ -11,12 +11,12 @@ if ($_SERVER['REQUEST_METHOD'] != 'POST') {
 $json = file_get_contents('php://input');
 $assoc = json_decode($json, true);
 
-$result = listEspecialidades();
+$result = listDoctorsOfSpeciality($speciality);
 
 if (!$result) {
-   echo json_encode(new ApiResponse(false, "Could not retrieve medical specialties", NULL));
+   echo json_encode(new ApiResponse(false, "Could not retrieve doctors", NULL));
    return;
 }
 
-echo json_encode(new ApiResponse(true, "Medical specialities retrieved", $result));
+echo json_encode(new ApiResponse(true, "Doctors retrieved", $result));
 ?>
