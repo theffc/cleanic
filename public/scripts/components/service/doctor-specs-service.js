@@ -12,11 +12,7 @@ $.extend(DoctorSpecsService.prototype, Service.prototype, {
 			dfd = $.Deferred(),
 			_this = this;
 
-		this.$loader.show();
-
-		this.request(serviceUrl, params, { method: 'POST' }).then(function(res) {
-
-			_this.$loader.hide();
+		this.request(serviceUrl, params, {}).then(function(res) {
 
 			if (res.wasSuccessful) {
 				dfd.resolve(res.data);

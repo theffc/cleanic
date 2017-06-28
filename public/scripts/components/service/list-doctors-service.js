@@ -6,17 +6,13 @@ function ListDoctorsService() {
 
 $.extend(ListDoctorsService.prototype, Service.prototype, {
 
-	loginUser: function(params) {
+	getDoctors: function(params) {
 
 		var serviceUrl = '/cleanic/public/api/medico-list.php',
 			dfd = $.Deferred(),
 			_this = this;
 
-		this.$loader.show();
-
 		this.request(serviceUrl, params, { method: 'POST' }).then(function(res) {
-
-			_this.$loader.hide();
 
 			if (res.wasSuccessful) {
 				dfd.resolve(res.data);

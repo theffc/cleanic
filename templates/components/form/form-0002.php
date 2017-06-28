@@ -9,11 +9,7 @@
   <div class="form-group">
     <label for="scheduling-doctor">Médico:<span class="color-red"> *</span></label>
     <select class="form-control" id="scheduling-doctor" required>
-      <option></option>
-      <option>Médico 1</option>
-      <option>Médico 2</option>
-      <option>Médico 3</option>
-      <option>Médico 4</option>
+
     </select>
   </div>
   <div class="form-group">
