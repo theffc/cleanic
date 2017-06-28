@@ -22,5 +22,5 @@
     <label for="contact-message">Mensagem:<span class="color-red"> *</span></label>
     <textarea class="form-control" id="contact-message" required></textarea>
   </div>
-  <button type="submit" class="btn btn-primary align-right">Submit</button>
+  <button type="submit" class="btn btn-primary align-right">Enviar</button>
 </form>
