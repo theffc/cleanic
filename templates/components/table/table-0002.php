@@ -4,18 +4,13 @@
 	  <thead>
 	  	<tr>
 	  		<th>Nome</th>
-	  		<th>E-mal</th>
+	  		<th>E-mail</th>
 	  		<th>Motivo</th>
 	  		<th>Mensagem</th>
 	  	</tr>
 	  </thead>
 	  <tbody>
-	  		<tr>
-	  			<td></td>
-	  			<td></td>
-	  			<td></td>
-	  			<td></td>
-	  		</tr>
+
 	  </tbody>
 	</table>
 </section>

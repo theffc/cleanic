@@ -1,20 +1,20 @@
 'use strict';
 
-function LoginService() {
+function ListContactsService() {
 	this.$loader = new Loader('#service-loader');
 }
 
-$.extend(LoginService.prototype, Service.prototype, {
+$.extend(ListContactsService.prototype, Service.prototype, {
 
-	loginUser: function(params) {
+	getContacts: function(params) {
 
-		var serviceUrl = '/cleanic/public/api/login.php',
+		var serviceUrl = '/cleanic/public/api/contact-list.php',
 			dfd = $.Deferred(),
 			_this = this;
 
 		this.$loader.show();
 
-		this.request(serviceUrl, params, { method: 'POST' }).then(function(res) {
+		this.request(serviceUrl, params, {}).then(function(res) {
 
 			_this.$loader.hide();
 

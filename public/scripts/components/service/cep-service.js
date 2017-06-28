@@ -1,14 +1,14 @@
 'use strict';
 
-function LoginService() {
+function CepService() {
 	this.$loader = new Loader('#service-loader');
 }
 
-$.extend(LoginService.prototype, Service.prototype, {
+$.extend(CepService.prototype, Service.prototype, {
 
-	loginUser: function(params) {
+	getCepInfo: function(params) {
 
-		var serviceUrl = '/cleanic/public/api/login.php',
+		var serviceUrl = '/cleanic/public/api/cep-search.php',
 			dfd = $.Deferred(),
 			_this = this;
 

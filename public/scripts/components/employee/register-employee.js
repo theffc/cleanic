@@ -3,6 +3,10 @@
 function RegisterEmployee($holder) {
 	this.$holder = $($holder || document.body);
 	this.$employeeSpec = null;
+	this.$employeeStreet = null;
+	this.$employeeNeighborhood = null;
+	this.$employeeCity = null;
+	this.cepService = new CepService();
 };
 
 RegisterEmployee.prototype = {
@@ -23,8 +27,46 @@ RegisterEmployee.prototype = {
 		$specInput.removeAttr('required');
 	},
 
-	onChangeCEP: function(event) {
+	removeCepData: function() {
+		this.$employeeStreet.val('');
+		this.$employeeNeighborhood.val('');
+		this.$employeeCity.val('');
+	},
 
+	onGetCepInfoError: function(message) {
+		this.removeCepData();
+	},
+
+	setCepData: function(data) {
+		this.$employeeStreet.val(data['logradouro']);
+		this.$employeeNeighborhood.val(data['bairro']);
+		this.$employeeCity.val(data['cidade']);
+	},
+
+	onGetCepInfoSuccess: function(data) {
+		this.setCepData(data);
+	},
+
+	getCepParams(cep) {
+		return JSON.stringify({
+			'cep': cep
+		});
+	},
+
+	retrieveCepInfo: function(cep) {
+		var params;
+		params = this.getCepParams(cep);
+		this.cepService.getCepInfo(params)
+			.then($.proxy(this.onGetCepInfoSuccess, this), $.proxy(this.onGetCepInfoError, this));
+	},
+
+	onChangeCEP: function(event) {
+		var $element = $(event.target),
+			cep = $element.val();
+
+		if (cep.length >= 1) {
+			this.retrieveCepInfo(cep);
+		}
 	},
 
 	onSubmitNewEmployee: function(event) {
@@ -47,12 +89,15 @@ RegisterEmployee.prototype = {
 		this.$holder.on('change', '[data-employee-cep]', $.proxy(this.onChangeCEP, this));
 	},
 
-	setEmployeeSpec: function() {
+	setEmployeeElements: function() {
 		this.$employeeSpec = this.$holder.find('[data-employee-spec]');
+		this.$employeeStreet = this.$holder.find('[data-employee-street]');
+		this.$employeeNeighborhood = this.$holder.find('[data-employee-neighborhood]');
+		this.$employeeCity = this.$holder.find('[data-employee-city]');
 	},
 
 	init: function() {
-		this.setEmployeeSpec();
+		this.setEmployeeElements();
 		this.bindEvents();
 	}
 };

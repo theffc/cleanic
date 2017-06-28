@@ -1,14 +1,14 @@
 'use strict';
 
-function LoginService() {
+function ContactAddService() {
 	this.$loader = new Loader('#service-loader');
 }
 
-$.extend(LoginService.prototype, Service.prototype, {
+$.extend(ContactAddService.prototype, Service.prototype, {
 
-	loginUser: function(params) {
+	addContact: function(params) {
 
-		var serviceUrl = '/cleanic/public/api/login.php',
+		var serviceUrl = '/cleanic/public/api/contact-add.php',
 			dfd = $.Deferred(),
 			_this = this;
 
