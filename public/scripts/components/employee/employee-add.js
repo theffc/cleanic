@@ -97,7 +97,7 @@ EmployeeAdd.prototype = {
 	onChangeEmployeeJob: function(event) {
 		var $element
 		$element = $(event.target);
-		$element.val() === 'Médico'? this.addSpecField() : this.removeSpecField();
+		$element.val() === 'Medico'? this.addSpecField() : this.removeSpecField();
 	},
 
 	bindEvents: function() {
