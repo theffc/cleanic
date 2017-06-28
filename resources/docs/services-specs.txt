@@ -2,28 +2,28 @@
 # Serviços
 
 ## Tela de Agendamento
-	- OK - funcionario-service: recebe todas as possíveis especialidades médicas (as quais são obtidas de acordo com todos os médicos cadastrados)
-	- OK - funcionario-service: fornece uma especialidade médica, e recebe os médicos daquela especialidade
+	- funcionario-service: recebe todas as possíveis especialidades médicas (as quais são obtidas de acordo com todos os médicos cadastrados)
+	- funcionario-service: fornece uma especialidade médica, e recebe os médicos daquela especialidade
 	- fornece um médico, e recebe todos os horários disponíveis daquele médico
-	- OK - fornece um formulário de agendamento, e consequentemente informações para cadastro de um novo cliente (paciente)
+	- fornece um formulário de agendamento, e consequentemente informações para cadastro de um novo cliente (paciente)
 
 ## Tela de Contato
-	- OK - contato-service: fornece um formulário simples para cadastrar um Contato
+	- contato-service: fornece um formulário simples para cadastrar um Contato
 
 ## Tela de Login
-	- OK - user-service: fornece um formulário simples para login de usuário, e recebe se foi possível ou não realizar o login.
+	- user-service: fornece um formulário simples para login de usuário, e recebe se foi possível ou não realizar o login.
 
 ## Tela de Cadastro de Funcionários (Novo Funcionário)
-	- OK - funcionario-service: fornece um formulário com bastante informação para cadastro de um funcionário
-	- OK -fornece um número de CEP, e recebe informações (logradouro, bairro, cidade) daquele CEP em específico
+	- funcionario-service: fornece um formulário com bastante informação para cadastro de um funcionário
+	- fornece um número de CEP, e recebe informações (logradouro, bairro, cidade) daquele CEP em específico
 
 ## Tela de Listagem dos Funcionários
-	- OK - funcionario-service: recebe todos os modelos de funcionários que estão no banco de dados 
+	- funcionario-service: recebe todos os modelos de funcionários que estão no banco de dados 
 
 ## Tela de Listagem dos Contatos
-	- OK - contato-service: recebe todos os modelos de contatos que estão no banco de dados
+	- contato-service: recebe todos os modelos de contatos que estão no banco de dados
 
 ## Tela de Listagem dos Agendamentos
-	- OK - recebe um modelo modificado do agendamento, que deve conter o nome e especialidade do médico, e o nome e o telefone do paciente que agendou a consulta.
+	- recebe um modelo modificado do agendamento, que deve conter o nome e especialidade do médico, e o nome e o telefone do paciente que agendou a consulta.
 
 
