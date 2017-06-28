@@ -1,7 +1,7 @@
 <?php
 require_once '../../config/defaults.php';
 require_once 'agendamento.php';
-require_once 'AgendamentoModificado.php';
+require_once 'agendamentoModificado.php';
 require_once 'horarios-disponiveis.php';
 require_once '../../src/customer/customer-service.php';
 
