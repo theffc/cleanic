@@ -18,8 +18,6 @@ function listAllContacts() {
 	$conn = connectToDatabase();
 	$result = $conn->query($query);
 
-	print_r($result);
-
 	if ($result->num_rows == 0) {
 		return NULL;
 	}
@@ -28,6 +26,7 @@ function listAllContacts() {
 	while ($assoc = $result->fetch_assoc()) {
 		array_push($contactsList, new Contato($assoc));
 	}
+
 	return $contactsList;
 }
 
