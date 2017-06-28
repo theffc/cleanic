@@ -25,24 +25,41 @@ function ListaAgendamento() {
 }
 
 function addAgendamento(RequestNewAgendamento $requestAgendamento) {
-   $paciente = addNewPaciente($requestAgendamento->nomePac, $requestAgendamento->telPac);
-   if ($paciente == NULL) {
-      return NULL;
-   }
-
-   $query = "INSERT INTO Agenda(codAgendamento, dataAgendamento, horaAgendamento, codFuncionario, codPaciente) VALUES (0, '$requestAgendamento->dataAgendamento', '$requestAgendamento->horaAgendamento', '$requestAgendamento->codFuncionario', '$paciente->codigoPac')";
    $db = connectToDatabase();
-   $result = $db->query($query);
-   if ($result == NULL) {
+   if (!$db) {
       return NULL;
    }
 
-   $codAgendamento = $db->insert_id;
-   $query = "SELECT * FROM Agenda WHERE codAgendamento = '$codAgendamento'";
-   $result = $db->query($query);
-   $assoc = $result->fetch_assoc();
-   $agendamento = new Agendamento($assoc);
-   return $agendamento;
+   try {
+      $db->begin_transaction();
+
+      $paciente = getPaciente($requestAgendamento->nomePac, $requestAgendamento->telPac, $db);
+      if (!$paciente) {
+         $paciente = addNewPaciente($requestAgendamento->nomePac, $requestAgendamento->telPac, $db);
+         if (!$paciente) {
+            throw new Exception("ERROR");
+         }
+      }
+
+      $query = "INSERT INTO Agenda(codAgendamento, dataAgendamento, horaAgendamento, codFuncionario, codPaciente) VALUES (0, '$requestAgendamento->dataAgendamento', '$requestAgendamento->horaAgendamento', '$requestAgendamento->codFuncionario', '$paciente->codigoPac')";
+      $result = $db->query($query);
+      if (!$result) {
+         throw new Exception("ERROR");
+      }
+
+      $codAgendamento = $db->insert_id;
+      $query = "SELECT * FROM Agenda WHERE codAgendamento = '$codAgendamento'";
+      $result = $db->query($query);
+      $assoc = $result->fetch_assoc();
+      $agendamento = new Agendamento($assoc);
+
+      $db->commit();
+      return $agendamento;
+   }
+   catch(Exception $e) {
+      $db->rollback();
+      return NULL;
+   }
 }
 
 class RequestNewAgendamento

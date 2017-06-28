@@ -3,9 +3,15 @@ require_once '../../config/defaults.php';
 require_once 'customer.php';
 
 
-function addNewPaciente($nome, $telefone) {
+function addNewPaciente($nome, $telefone, $db = NULL) {
+   if (!$db) {
+      $db = connectToDatabase();
+      if (!$db) {
+         return NULL;
+      }
+   }
+
    $query = "INSERT INTO Paciente(codigoPac, nomePac, telPac) VALUES(0, '$nome', '$telefone')";
-   $db = connectToDatabase();
    $result = $db->query($query);
 
    if ($result == FALSE) {
@@ -13,20 +19,32 @@ function addNewPaciente($nome, $telefone) {
    }
 
    $codigoPac = $db->insert_id;
-   $paciente = getPaciente($codigoPac);
-   return $paciente;
-}
-
-
-function getPaciente($codigoPac) {
-   $query = "SELECT * FROM Paciente WHERE codigoPac = '$codigoPac'";
-   $db = connectToDatabase();
-   $result = $db->query($query);
-   $assoc = $result->fetch_assoc();
+   $assoc = array();
+   $assoc['codigoPac'] = $codigoPac;
+   $assoc['nomePac'] = $nome;
+   $assoc['telPac'] = $telefone;
    $paciente = new Paciente($assoc);
    return $paciente;
 }
 
+function getPaciente($nome, $telefone, $db = NULL) {
+   if (!$db) {
+      $db = connectToDatabase();
+      if (!$db) {
+         return NULL;
+      }
+   }
+
+   $query = "SELECT * FROM Paciente WHERE nomePac = '$nome' AND telPac = '$telefone'";
+   $result = $db->query($query);
+   $assoc = $result->fetch_assoc();
+   if (!$assoc) {
+      return NULL;
+   }
+
+   $paciente = new Paciente($assoc);
+   return $paciente;
+}
 
 function testGetPaciente() {
    $codigoPac = 3;
