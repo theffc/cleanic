@@ -1,6 +1,6 @@
 <section class="section-0001">
 	<h3>Lista de Agendamentos</h3>
-	<table class="table table-bordered" data-list-scheduling-table>
+	<table class="table table-bordered" data-list-schedules-table>
 	  <thead>
 	  	<tr>
 	  		<th>Nome do Médico</th>
@@ -12,14 +12,7 @@
 	  	</tr>
 	  </thead>
 	  <tbody>
-	  		<tr>
-	  			<td></td>
-	  			<td></td>
-	  			<td></td>
-	  			<td></td>
-	  			<td></td>
-	  			<td></td>
-	  		</tr>
+
 	  </tbody>
 	</table>
 </section>

@@ -15,6 +15,8 @@
 	<body>
 		<?php require_once(__TEMPLATES__ . '/components/header/header-0001.php'); ?>
 
+		<?php require_once(__TEMPLATES__ . '/components/loader/loader-0001.php'); ?>
+
 		<?php require_once(__TEMPLATES__ . '/components/modal/modal-0001.php'); ?>
 
 		<?php require_once(__TEMPLATES__ . '/components/main/home.php'); ?>

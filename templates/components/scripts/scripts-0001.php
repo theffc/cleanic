@@ -9,9 +9,17 @@
 
 <script src="/cleanic/public/scripts/helpers/helper-fs.js"></script>
 
+<script src="/cleanic/public/scripts/components/loader/loader.js"></script>
+
 <script src="/cleanic/public/scripts/components/service/service.js"></script>
 
 <script src="/cleanic/public/scripts/components/service/login-service.js"></script>
+
+<script src="/cleanic/public/scripts/components/service/list-schedules-service.js"></script>
+
+<script src="/cleanic/public/scripts/components/service/list-contacts-service.js"></script>
+
+<script src="/cleanic/public/scripts/components/service/list-employees-service.js"></script>
 
 <script src="/cleanic/public/scripts/components/pagination/main-paginator.js"></script>
 
@@ -26,5 +34,7 @@
 <script src="/cleanic/public/scripts/components/employee/list-employees.js"></script>
 
 <script src="/cleanic/public/scripts/components/contact/list-contacts.js"></script>
+
+<script src="/cleanic/public/scripts/components/scheduling/list-schedules.js"></script>
 
 <script src="/cleanic/public/scripts/scripts.js"></script>
