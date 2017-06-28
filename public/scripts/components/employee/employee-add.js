@@ -1,6 +1,6 @@
 'use strict';
 
-function RegisterEmployee($holder) {
+function EmployeeAdd($holder) {
 	this.$holder = $($holder || document.body);
 	this.$employeeSpec = null;
 	this.$employeeStreet = null;
@@ -9,7 +9,7 @@ function RegisterEmployee($holder) {
 	this.cepService = new CepService();
 };
 
-RegisterEmployee.prototype = {
+EmployeeAdd.prototype = {
 
 	addSpecField: function() {
 		var $specInput;
