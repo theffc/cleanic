@@ -13,6 +13,8 @@
 
 <script src="/cleanic/public/scripts/components/service/service.js"></script>
 
+<script src="/cleanic/public/scripts/components/service/cep-service.js"></script>
+
 <script src="/cleanic/public/scripts/components/service/login-service.js"></script>
 
 <script src="/cleanic/public/scripts/components/service/list-schedules-service.js"></script>
@@ -20,6 +22,8 @@
 <script src="/cleanic/public/scripts/components/service/list-contacts-service.js"></script>
 
 <script src="/cleanic/public/scripts/components/service/list-employees-service.js"></script>
+
+<script src="/cleanic/public/scripts/components/service/contact-add-service.js"></script>
 
 <script src="/cleanic/public/scripts/components/pagination/main-paginator.js"></script>
 
@@ -34,6 +38,8 @@
 <script src="/cleanic/public/scripts/components/employee/list-employees.js"></script>
 
 <script src="/cleanic/public/scripts/components/contact/list-contacts.js"></script>
+
+<script src="/cleanic/public/scripts/components/contact/contact-add.js"></script>
 
 <script src="/cleanic/public/scripts/components/scheduling/list-schedules.js"></script>
 

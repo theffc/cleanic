@@ -19,6 +19,10 @@
 
 		<?php require_once(__TEMPLATES__ . '/components/modal/modal-0001.php'); ?>
 
+		<?php require_once(__TEMPLATES__ . '/components/modal/modal-0002.php'); ?>
+
+		<?php require_once(__TEMPLATES__ . '/components/modal/modal-0003.php'); ?>
+
 		<?php require_once(__TEMPLATES__ . '/components/main/home.php'); ?>
 
 		<?php require_once(__TEMPLATES__ . '/components/main/gallery.php'); ?>

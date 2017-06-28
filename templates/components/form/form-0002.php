@@ -1,4 +1,4 @@
-<form class="form-0001">
+<form class="form-0001" data-schedule-add-form>
   <h3 class="text-align-center">Agende sua consulta:</h3>
   <div class="form-group">
     <label for="scheduling-specialty">Especialidade Médica:<span class="color-red"> *</span></label>

@@ -10,7 +10,7 @@ function LoginBehavior($holder) {
 LoginBehavior.prototype = {
 
 	onLoginError: function(message) {
-		console.log(message);
+		$('#error-modal').modal('show');
 	},
 
 	onLoginSuccess: function() {

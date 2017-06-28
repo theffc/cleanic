@@ -17,7 +17,8 @@ $(document).ready(function() {
 			RegisterEmployee,
 			ListEmployees,
 			ListContacts,
-			ListSchedules
+			ListSchedules,
+			ContactAdd
 		];
 
 		initializeComponents(components);

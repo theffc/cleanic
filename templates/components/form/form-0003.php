@@ -63,7 +63,7 @@
 		<h3 class="">Endereço:</h3>
 		<div class="form-group">
 			<label for="employee-cep">CEP:<span class="color-red"> *</span></label>
-			<input type="text" class="form-control" name="employee-cep" id="employee-cep" data-employee-cep required>
+			<input type="text" class="form-control" name="employee-cep" id="employee-cep" maxlength="8" data-employee-cep required>
 		</div>
 		<div class="form-group">
 		  <label for="employee-street-type">Tipo de logradouro:<span class="color-red"> *</span></label>
@@ -76,7 +76,7 @@
 		</div>
 		<div class="form-group">
 			<label for="employee-street">Logradouro:<span class="color-red"> *</span></label>
-			<input type="text" class="form-control" name="employee-street" id="employee-street" required>
+			<input type="text" class="form-control" name="employee-street" id="employee-street" data-employee-street required>
 		</div>
 		<div class="form-group">
 			<label for="employee-address-num">Número:<span class="color-red"> *</span></label>
@@ -88,11 +88,11 @@
 		</div>
 		<div class="form-group">
 			<label for="employee-neighborhood">Bairro:<span class="color-red"> *</span></label>
-			<input type="text" class="form-control" name="employee-neighborhood" id="employee-neighborhood" required>
+			<input type="text" class="form-control" name="employee-neighborhood" id="employee-neighborhood" data-employee-neighborhood required>
 		</div>
 		<div class="form-group">
 			<label for="employee-city">Cidade:<span class="color-red"> *</span></label>
-			<input type="text" class="form-control" name="employee-city" id="employee-city" required>
+			<input type="text" class="form-control" name="employee-city" id="employee-city" data-employee-city required>
 		</div>
 		<div class="form-group">
 			<label for="employee-state">Estado:<span class="color-red"> *</span></label>
