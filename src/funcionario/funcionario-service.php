@@ -2,7 +2,6 @@
 require_once '../../config/defaults.php';
 require_once 'funcionario.php';
 
-listEspecialidades();
 
 function listAllFuncionarios() {
    $query = "SELECT * FROM Funcionario";
