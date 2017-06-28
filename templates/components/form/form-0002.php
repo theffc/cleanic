@@ -19,11 +19,7 @@
   <div class="form-group">
     <label for="scheduling-time">Horário:<span class="color-red"> *</span></label>
     <select class="form-control" id="scheduling-time" required>
-      <option></option>
-      <option>Horário 1</option>
-      <option>Horário 2</option>
-      <option>Horário 3</option>
-      <option>Horário 4</option>
+
     </select>
   </div>
   <div class="form-group">

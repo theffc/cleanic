@@ -4,9 +4,92 @@ function ScheduleAdd($holder) {
 	this.$holder = $($holder || document.body);
 	this.doctorSpecsService = new DoctorSpecsService();
 	this.listDoctorsService = new ListDoctorsService();
+	this.availableTimeService = new AvailableTimeService();
+};
+
+ScheduleAdd.hoursDict = {
+	'CincoTarde': '17:00',
+	'DezManha': '10:00',
+	'DuasTarde': '14:00',
+	'MeioDia': '12:00',
+	'NoveManha': '09:00',
+	'OitoManha': '08:00',
+	'OnzeManha': '11:00',
+	'QuatroTarde': '16:00',
+	'TresTarde': '15:00',
+	'UmaTarde': '13:00'
 };
 
 ScheduleAdd.prototype = {
+
+	setHoursOptions: function(data) {
+		var $element = $('#scheduling-time');
+		$element.empty();
+
+		$element.append('<option value=""></option>');
+		for (var i = 0; i < data.length; i++) {
+			$element.append('<option value="' + data[i] + '">' + data[i] + '</option>');
+		}
+	},
+
+	onGetAvailableTimeError: function(message) {
+		$('#error-modal').modal('show');
+	},
+
+	onGetAvailableTimeSuccess: function(data) {
+		var key,
+			availableHours = [];
+
+		for (key in ScheduleAdd.hoursDict) {
+			if (ScheduleAdd.hoursDict.hasOwnProperty(key)) {
+				if (data[key]) {
+					availableHours.push(ScheduleAdd.hoursDict[key]);
+				}
+			}
+		}
+		this.setHoursOptions(availableHours);
+	},
+
+	resetHoursField: function() {
+		var $hoursField = $('#scheduling-time');
+
+		$hoursField.empty();
+		$hoursField.append('<option value=""></option>');
+	},
+
+	getAvailableHoursParams: function(date) {
+		var $doctor = $('#scheduling-doctor'),
+			doctorId = $doctor.find('option[value="' + $doctor.val() + '"]').data('id');
+
+		return JSON.stringify({
+			'dataAgendamento': date,
+			'idMedico': doctorId
+		});
+	},
+
+	retrieveAvailableHours: function(date) {
+		var doctorName = $('#scheduling-doctor').val(),
+			params;
+
+		if (doctorName !== '') {
+			params = this.getAvailableHoursParams(date);
+			this.availableTimeService.getAvailableTimes(params)
+				.then($.proxy(this.onGetAvailableTimeSuccess, this), $.proxy(this.onGetAvailableTimeError, this));
+		}
+		else {
+			this.resetHoursField();
+		}
+	},
+
+	setAvailableHours: function(date) {
+		date !== ''? this.retrieveAvailableHours(date) : this.resetHoursField();
+	},
+
+	onChangeScheduleDate: function(event) {
+		var $element;
+		$element = $(event.target);
+		this.setAvailableHours($element.val());
+	},
 
 	onListDoctorsError: function(message) {
 		$('#error-modal').modal('show');
@@ -19,7 +102,7 @@ ScheduleAdd.prototype = {
 		$element.append('<option value=""></option>');
 		for (var i = 0; i < data.length; i++) {
 			$element.append(
-				'<option value="' + data[i]['nomeFunc'] + '">' + data[i]['nomeFunc'] + '</option>'
+				'<option data-id="' + data[i]['idFunc'] + '" value="' + data[i]['nomeFunc'] + '">' + data[i]['nomeFunc'] + '</option>'
 			);
 		}
 	},
@@ -102,6 +185,8 @@ ScheduleAdd.prototype = {
 		this.$holder.on('submit', '[data-schedule-add-form]', $.proxy(this.onSubmitNewSchedule, this));
 
 		$('#scheduling-specialty').on('change', $.proxy(this.onChangeSpecialty, this));
+
+		$('#scheduling-date').on('change', $.proxy(this.onChangeScheduleDate, this));
 	},
 
 	init: function() {
