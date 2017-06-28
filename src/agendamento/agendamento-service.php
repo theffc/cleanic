@@ -6,17 +6,20 @@ require_once 'horarios-disponiveis.php';
 
 #return the appointments with Medics only, contains Medic name, speciality, pacient name and phone number
 function ListaAgendamento() {
+   $conn = connectToDatabase();
+   if (!$conn) {
+      return NULL;
+   }
+
    $query = "SELECT	M.nomeFunc , M.especialidadeFunc , P.nomePac , P.telPac, A.dataAgendamento, A.horaAgendamento
             FROM Agenda AS A , Paciente AS P , Funcionario AS M
             WHERE A.codPaciente = P.codigoPac AND A.codFuncionario = M.idFunc AND M.cargoFunc = 'MEDICO'";
-
-   $conn = connectToDatabase();
    $result = $conn->query($query);
+
    $agendamentosMod = array();
    while ($assoc = $result->fetch_assoc()) {
    	array_push($agendamentosMod, new AgendamentoModificado($assoc));
    }
-   print_r($agendamentosMod);
    return $agendamentosMod;
 }
 
@@ -106,7 +109,7 @@ function ListaHorariosDisponiveis($idMedico, $dataAgendamento){
             $disponibilidades[9] = false;
          }
       }
-      $horariosDisponiveis = new horariosDisponiveis($disponibilidades);
+      $horariosDisponiveis = new HorariosDisponiveis($disponibilidades);
       return $horariosDisponiveis;
    }
 }

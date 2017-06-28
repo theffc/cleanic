@@ -1,24 +1,45 @@
 ﻿
 # Serviços - Integração API
 
+**IMPORTANTE:** Lembrar que todas as respostas dos serviços seguirão o seguinte padrão:
+
+```json
+{
+    "wasSuccessful": true,
+    "message": "Some message",
+    "data": { }
+}
+```
+
+O campo "data" armazenará o objeto principal do serviço, mas, em alguns casos, poderá ser NULL.
+
 ## Tela de Agendamento
-	- funcionario-service: recebe todas as possíveis especialidades médicas (as quais são obtidas de acordo com todos os médicos cadastrados)
-	- funcionario-service: fornece uma especialidade médica, e recebe os médicos daquela especialidade
-	- OK ::: lista-horarios-disponiveis.phh, POST 'idMedico','dataAgendamento' // YYYY-MM-DD fornece um médico, e recebe todos os horários disponíveis daquele médico
-	- fornece um formulário de agendamento, e consequentemente informações para cadastro de um novo cliente (paciente)
+- POST api/agendamentos-disponiveis-medico.php
+	+ in: {"idMedico": 2, "dataAgendamento": "2017-12-28"}
+	+ out: {"OitoManha": true, "NoveManha": true, "DezManha": true, "OnzeManha": false, "MeioDia": false, "UmaTarde": true, "DuasTarde": true, "TresTarde": true, "QuatroTarde": true, "CincoTarde": true }
+	+ info: fornece um médico, e recebe todos os horários disponíveis daquele médico
+- funcionario-service: recebe todas as possíveis especialidades médicas (as quais são obtidas de acordo com todos os médicos cadastrados)
+- funcionario-service: fornece uma especialidade médica, e recebe os médicos daquela especialidade
+- fornece um formulário de agendamento, e consequentemente informações para cadastro de um novo cliente (paciente)
 
 ## Tela de Contato
-	- OK ::: contact-list.php, GET // fornece um formulário simples para cadastrar um Contato
+- GET api/contact-list.php
+	+ out: [ {"nomeCliente": "Cleonice Souza Andrade", "emailCliente": "andrasouzc@hotimeiu.com", "motivoContato": "ELOGIO", "mensagemContato": "Clinica muito bonita.\r\n"} ]
+	+ info: fornece um formulário simples para cadastrar um Contato
 
 ## Tela de Login
-	- OK ::: login.php, POST 'user', 'senha' //  fornece um formulário simples para login de usuário, e recebe se foi possível ou não realizar o login.
+- POST login.php
+	+ in: {"username": "fred@cleanic.com", "password": "fred"}
+	+ out: NULL
+	+ info: fornece um formulário simples para login de usuário, e recebe se foi possível ou não realizar o login
 
 ## Tela de Cadastro de Funcionários (Novo Funcionário)
+- POST api/cep-search.php 
+	+ in: { "cep": "213243" }
+	+ out: {"cep":"31560380", "logradouro":"Rua Engenheiro Pedro Bax", "bairro":"Santa Am\u00e9lia", "cidade":"Belo Horizonte", "estado":"MG"}
+	+ info: fornece um número de CEP, e recebe informações (logradouro, bairro, cidade) daquele CEP em específico
 - funcionario-service: fornece um formulário com bastante informação para cadastro de um funcionário
-- api/cep-search.php POST 
-	IN: { "cep": "213243" }
-	OUT: {"cep":"31560380", "logradouro":"Rua Engenheiro Pedro Bax", "bairro":"Santa Am\u00e9lia", "cidade":"Belo Horizonte", "estado":"MG"}
-	INFO: fornece um número de CEP, e recebe informações (logradouro, bairro, cidade) daquele CEP em específico
+
 
 ## Tela de Listagem dos Funcionários
 	- funcionario-service: recebe todos os modelos de funcionários que estão no banco de dados 
@@ -27,6 +48,8 @@
 	- contato-service: recebe todos os modelos de contatos que estão no banco de dados
 
 ## Tela de Listagem dos Agendamentos
-	- OK ::: agendamento-list.php, GET // recebe um modelo modificado do agendamento, que deve conter o nome e especialidade do médico, e o nome e o telefone do paciente que agendou a consulta.
+- GET agendamento-list.php
+	+ out: [ {"nomeMedico": "Leopoldo", "especialidadeMedico": "oftalmologista", "nomePaciente": "Braz", "telPaciente": "999998888", "horaConsulta": "13:00:00", "dataConsulta": "2017-06-23"}, ] 
+	+ info: recebe um modelo modificado do agendamento, que deve conter o nome e especialidade do médico, e o nome e o telefone do paciente que agendou a consulta.
 
 
