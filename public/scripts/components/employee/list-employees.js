@@ -12,10 +12,12 @@ ListEmployees.prototype = {
 	insertRow: function(index, element) {
 		var $tr = $('<tr></tr>');
 
-		$tr.append('<td>' + element['nomeCliente'] + '</td>');
-		$tr.append('<td>' + element['emailCliente'] + '</td>');
-		$tr.append('<td>' + element['motivoContato'] + '</td>');
-		$tr.append('<td>' + element['mensagemContato'] + '</td>');
+		$tr.append('<td>' + element['nomeFunc'] + '</td>');
+		$tr.append('<td>' + element['sexoFunc'] + '</td>');
+		$tr.append('<td>' + element['cargoFunc'] + '</td>');
+		$tr.append('<td>' + element['especialidadeFunc'] + '</td>');
+		$tr.append('<td>' + element['RG'] + '</td>');
+		$tr.append('<td>' + element['dataNascFunc'] + '</td>');
 
 		this.$listEmployeesBody.append($tr);
 	},
@@ -30,7 +32,7 @@ ListEmployees.prototype = {
 	},
 
 	onGetListEmployeesError: function(message) {
-		console.log(message);
+		$('#error-modal').modal('show');
 	},
 
 	onGetListEmployeesSuccess: function(data) {

@@ -6,9 +6,9 @@
 	  		<th>Nome</th>
 	  		<th>Sexo</th>
 	  		<th>Cargo</th>
+	  		<th>Especialidade</th>
 	  		<th>RG</th>
-	  		<th>Logradouro</th>
-	  		<th>Cidade</th>
+	  		<th>Data de nascimento</th>
 	  	</tr>
 	  </thead>
 	  <tbody>
