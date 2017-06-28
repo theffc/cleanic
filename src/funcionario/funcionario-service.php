@@ -18,11 +18,20 @@ function listAllFuncionarios() {
 
 // returns TRUE if successful, and FALSE on failure.
 function addFuncionario(Funcionario $funcionario) {
+   $db = connectToDatabase();
+   if (!$db) {
+      return NULL;
+   }
+
    $query = "INSERT INTO Funcionario (idFunc, nomeFunc, dataNascFunc, sexoFunc, estadoCivilFunc, cargoFunc, especialidadeFunc, CPF, RG, docsFunc) VALUES ('$funcionario->idFunc', '$funcionario->nomeFunc', '$funcionario->dataNascFunc', '$funcionario->sexoFunc', '$funcionario->estadoCivilFunc', '$funcionario->cargoFunc', '$funcionario->especialidadeFunc', '$funcionario->CPF', '$funcionario->RG', '$funcionario->docsFunc')";
 
-   $db = connectToDatabase();
    $result = $db->query($query);
-   return($result); # bool
+   if (!$result) {
+      return NULL;
+   }
+
+   $funcionario->idFunc = $db->insert_id;
+   return($funcionario); # bool
 }
 
 # returns all funcionarios that have the "cargoFunc" property equals to "MEDICO"
