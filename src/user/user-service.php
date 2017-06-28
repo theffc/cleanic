@@ -5,24 +5,23 @@ require_once 'user.php';
 
 
 function login(Usuario $user) {
-   $query = "SELECT username, password FROM Usuario WHERE username = '$user->username' AND password = '$user->password'";
-
    $conn = connectToDatabase();
-   $result = $conn->query($query);
-   if ($result->num_rows == 0 || $result == FALSE) {
-      return new LoginResponse(FALSE);
-   } else {
-     return new LoginResponse(TRUE);
+   if (!$conn) {
+      return NULL;
    }
-}
 
+   $query = "SELECT username, password FROM Usuario WHERE username = '$user->username' AND password = '$user->password'";
+   $result = $conn->query($query);
 
-class LoginResponse
-{
-   public $isAccepted;
+   $conn->close();
 
-   public function __construct($isAccepted) {
-      $this->isAccepted = $isAccepted;
+   if ($result->num_rows == 0 || $result == FALSE) {
+      return FALSE;
+   }
+   else {
+      session_start();
+      $_SESSION['user'] = $user;
+      return TRUE;
    }
 }
 
@@ -35,7 +34,6 @@ function testLogin() {
 
    $result = login($user);
 
-   header('Content-Type: application/json');
    echo json_encode($result);
 }
 
