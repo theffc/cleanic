@@ -26,7 +26,4 @@ class Funcionario
       $this->docsFunc = htmlspecialchars_decode($assoc["docsFunc"]);
    }
 }
-
-
-
- ?>
+?>

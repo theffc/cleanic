@@ -2,6 +2,7 @@
 require_once '../../config/defaults.php';
 require_once 'funcionario.php';
 
+listEspecialidades();
 
 function listAllFuncionarios() {
    $query = "SELECT * FROM Funcionario";
@@ -51,7 +52,20 @@ function listDoctorsOfSpeciality($speciality) {
    return $doctors;
 }
 
+function listEspecialidades(){
 
+   $query = "SELECT especialidadeFunc from Funcionario where cargoFunc = 'MEDICO' GROUP BY especialidadeFunc";
+
+   $db = connectToDatabase();
+   $result = $db->query($query);
+
+   $especialidades = array();
+   while ($assoc = $result->fetch_assoc()) {
+      array_push($especialidades, $assoc['especialidadeFunc']);
+   }
+   print_r($especialidades);
+   return $especialidades;
+}
 # TESTS
 
 function testAddFuncionario() {
