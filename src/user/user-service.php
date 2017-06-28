@@ -9,19 +9,12 @@ function login(Usuario $user) {
       return NULL;
    }
 
-   
-   $stmt = $conn->prepare("SELECT * FROM Usuario WHERE username = ? AND password = ?");
-   $stmt->bind_param("ss", $user->username, $user->password);
-   $stmt->execute();
-   $stmt->bind_result($username, $password);
-   //$query = "SELECT username, password FROM Usuario WHERE username = '$user->username' AND password = '$user->password'";
-   //$result = $conn->query($query);
-   while ($stmt->fetch()) {
-        echo $username, $password;
-    }
-   $stmt->close();
+   $query = "SELECT username, password FROM Usuario WHERE username = '$user->username' AND password = '$user->password'";
+   $result = $conn->query($query);
 
-   if ($username == FALSE) {
+   $conn->close();
+
+   if ($result->num_rows == 0 || $result == FALSE) {
       return FALSE;
    }
    else {
