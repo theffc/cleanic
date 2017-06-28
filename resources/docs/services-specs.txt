@@ -14,8 +14,11 @@
 	- OK ::: login.php, POST 'user', 'senha' //  fornece um formulário simples para login de usuário, e recebe se foi possível ou não realizar o login.
 
 ## Tela de Cadastro de Funcionários (Novo Funcionário)
-	- funcionario-service: fornece um formulário com bastante informação para cadastro de um funcionário
-	- fornece um número de CEP, e recebe informações (logradouro, bairro, cidade) daquele CEP em específico
+- funcionario-service: fornece um formulário com bastante informação para cadastro de um funcionário
+- api/cep-search.php POST 
+	IN: { "cep": "213243" }
+	OUT: {"cep":"31560380", "logradouro":"Rua Engenheiro Pedro Bax", "bairro":"Santa Am\u00e9lia", "cidade":"Belo Horizonte", "estado":"MG"}
+	INFO: fornece um número de CEP, e recebe informações (logradouro, bairro, cidade) daquele CEP em específico
 
 ## Tela de Listagem dos Funcionários
 	- funcionario-service: recebe todos os modelos de funcionários que estão no banco de dados 
