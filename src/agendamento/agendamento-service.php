@@ -3,6 +3,7 @@ require_once '../../config/defaults.php';
 require_once 'agendamento.php';
 require_once 'AgendamentoModificado.php';
 require_once 'horarios-disponiveis.php';
+require_once '../../src/customer/customer-service.php';
 
 #return the appointments with Medics only, contains Medic name, speciality, pacient name and phone number
 function ListaAgendamento() {
@@ -23,7 +24,7 @@ function ListaAgendamento() {
    return $agendamentosMod;
 }
 
-function addAgendamento($requestAgendamento) {
+function addAgendamento(RequestNewAgendamento $requestAgendamento) {
    $paciente = addNewPaciente($requestAgendamento->nomePac, $requestAgendamento->telPac);
    if ($paciente == NULL) {
       return NULL;
