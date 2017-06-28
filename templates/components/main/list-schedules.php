@@ -3,5 +3,5 @@
 ?>
 
 <main id="list-schedules" class="main-0001" data-main-paginator="hidden">
-
+	<?php require_once(__TEMPLATES__ . '/components/table/table-0003.php'); ?>
 </main>

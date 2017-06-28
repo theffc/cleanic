@@ -15,13 +15,13 @@
 					<a href="#register-employee" data-nav-paginator>Novo Funcionário</a>
 				</li>
 				<li class="" data-nav-holder-paginator>
-					<a href="#list-employees" data-nav-paginator>Listar Funcionários</a>
+					<a href="#list-employees" data-nav-paginator data-list-employees-button>Listar Funcionários</a>
 				</li>
 				<li class="" data-nav-holder-paginator>
-					<a href="#list-contacts" data-nav-paginator>Listar Contatos</a>
+					<a href="#list-contacts" data-nav-paginator data-list-contacts-button>Listar Contatos</a>
 				</li>
 				<li class="" data-nav-holder-paginator>
-					<a href="#list-schedules" data-nav-paginator>Listar Agendamentos</a>
+					<a href="#list-schedules" data-nav-paginator data-list-scheduling-button>Listar Agendamentos</a>
 				</li>
 			</ul>
 			<ul class="nav navbar-nav navbar-right">

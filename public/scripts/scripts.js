@@ -14,7 +14,9 @@ $(document).ready(function() {
 			GalleryBehavior,
 			SchedulingBehavior,
 			LoginBehavior,
-			EmployeeBehavior
+			RegisterEmployee,
+			ListEmployees,
+			ListContacts
 		];
 
 		initializeComponents(components);

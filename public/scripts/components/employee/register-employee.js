@@ -1,11 +1,11 @@
 'use strict';
 
-function EmployeeBehavior($holder) {
+function RegisterEmployee($holder) {
 	this.$holder = $($holder || document.body);
 	this.$employeeSpec = null;
 };
 
-EmployeeBehavior.prototype = {
+RegisterEmployee.prototype = {
 
 	addSpecField: function() {
 		var $specInput;
