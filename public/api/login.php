@@ -9,14 +9,14 @@ $user = new User($assoc);
 
 if (!$user) {
 	$response = new ApiResponse(false, "Request data whith invalid format", NULL);
-   echo json_encode($response);
-   return;
+	echo json_encode($response);
+	return;
 }
 
 $result = login($user);
 
 if (!$result) {
-   echo json_encode(new ApiResponse(false, "Could not login"));
+   echo json_encode(new ApiResponse(false, "Could not login", NULL));
    return;
 }
 

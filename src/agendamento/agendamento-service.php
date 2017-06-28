@@ -61,7 +61,7 @@ class RequestNewAgendamento
    }
 }
 
-function ListaHorariosDisponiveis($idMedico, $dataAgendamento){
+public function ListaHorariosDisponiveis($idMedico, $dataAgendamento){
 
    $query = "SELECT horaAgendamento FROM Agenda AS A, Funcionario as M WHERE A.codFuncionario = '$idMedico' AND A.dataAgendamento = '$dataAgendamento' AND M.idFunc = '$idMedico' AND M.cargoFunc = 'MEDICO'";
    $db = connectToDatabase();
