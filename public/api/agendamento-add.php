@@ -18,11 +18,10 @@ if (!$agendamento) {
 
 // calling actual service
 $r = addAgendamento($agendamento);
-
-if ($r === FALSE) {
-   echo json_encode(new ApiResponse(false, "ERROR: could not add the contact", $r));
+if (!$r) {
+   echo json_encode(new ApiResponse(false, "ERROR: could not add agendamento", NULL));
    return;
 }
 
-echo json_encode(new ApiResponse(true, "Successfully added the contact", $r));
+echo json_encode(new ApiResponse(true, "Successfully added agendamento", $r));
 ?>
