@@ -5,13 +5,21 @@ require_once 'cep.php';
 
 // receives a CEP string, and returns the CEP model, that is a complete address (street, neighborhood, state, etc)
 function getCompleteAddressForCep($cep) {
-   $query = "SELECT * FROM CEP WHERE cep = '$cep'";
    $db = connectToDatabase();
+   if (!$db) {
+      return NULL;
+   }
+
+   $query = "SELECT * FROM CEP WHERE cep = '$cep'";
    $result = $db->query($query);
+   if ($result->num_rows == 0) {
+      return NULL;
+   }
 
    $assoc = $result->fetch_assoc();
-   print_r($assoc);
    $address = new CEP($assoc);
+
+   $db->close();
 
    return $address;
 }

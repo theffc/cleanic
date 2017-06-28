@@ -4,18 +4,21 @@
 ## Tela de Agendamento
 	- funcionario-service: recebe todas as possíveis especialidades médicas (as quais são obtidas de acordo com todos os médicos cadastrados)
 	- funcionario-service: fornece uma especialidade médica, e recebe os médicos daquela especialidade
-	-  OK ::: lista-horarios-disponiveis.phh, POST 'idMedico','dataAgendamento' // YYYY-MM-DD fornece um médico, e recebe todos os horários disponíveis daquele médico
+	- OK ::: lista-horarios-disponiveis.phh, POST 'idMedico','dataAgendamento' // YYYY-MM-DD fornece um médico, e recebe todos os horários disponíveis daquele médico
 	- fornece um formulário de agendamento, e consequentemente informações para cadastro de um novo cliente (paciente)
 
 ## Tela de Contato
-	- OK - contato-service: fornece um formulário simples para cadastrar um Contato
+	- OK ::: contact-list.php, GET // fornece um formulário simples para cadastrar um Contato
 
 ## Tela de Login
-	- OK - user-service: fornece um formulário simples para login de usuário, e recebe se foi possível ou não realizar o login.
+	- OK ::: login.php, POST 'user', 'senha' //  fornece um formulário simples para login de usuário, e recebe se foi possível ou não realizar o login.
 
 ## Tela de Cadastro de Funcionários (Novo Funcionário)
-	- funcionario-service: fornece um formulário com bastante informação para cadastro de um funcionário
-	- fornece um número de CEP, e recebe informações (logradouro, bairro, cidade) daquele CEP em específico
+- funcionario-service: fornece um formulário com bastante informação para cadastro de um funcionário
+- api/cep-search.php POST 
+	IN: { "cep": "213243" }
+	OUT: {"cep":"31560380", "logradouro":"Rua Engenheiro Pedro Bax", "bairro":"Santa Am\u00e9lia", "cidade":"Belo Horizonte", "estado":"MG"}
+	INFO: fornece um número de CEP, e recebe informações (logradouro, bairro, cidade) daquele CEP em específico
 
 ## Tela de Listagem dos Funcionários
 	- funcionario-service: recebe todos os modelos de funcionários que estão no banco de dados 
