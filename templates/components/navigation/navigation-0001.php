@@ -25,8 +25,8 @@
 				</li>
 			</ul>
 			<ul class="nav navbar-nav navbar-right">
-				<li class="">
-					<a href="#login">Login</a>
+				<li class="active">
+					<a data-toggle="modal" data-target="#login-modal" href="#login" data-login-button>Login</a>
 				</li>
 			</ul>
 		</div>

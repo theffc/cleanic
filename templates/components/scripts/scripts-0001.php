@@ -13,4 +13,6 @@
 
 <script src="/cleanic/public/scripts/components/scheduling/scheduling-behavior.js"></script>
 
+<script src="/cleanic/public/scripts/components/login/login-behavior.js"></script>
+
 <script src="/cleanic/public/scripts/scripts.js"></script>
