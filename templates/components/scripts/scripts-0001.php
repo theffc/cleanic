@@ -25,22 +25,26 @@
 
 <script src="/cleanic/public/scripts/components/service/contact-add-service.js"></script>
 
+<script src="/cleanic/public/scripts/components/service/list-doctors-service.js"></script>
+
+<script src="/cleanic/public/scripts/components/service/doctor-specs-service.js"></script>
+
 <script src="/cleanic/public/scripts/components/pagination/main-paginator.js"></script>
 
 <script src="/cleanic/public/scripts/components/gallery/gallery-behavior.js"></script>
 
-<script src="/cleanic/public/scripts/components/scheduling/scheduling-behavior.js"></script>
-
 <script src="/cleanic/public/scripts/components/login/login-behavior.js"></script>
-
-<script src="/cleanic/public/scripts/components/employee/register-employee.js"></script>
 
 <script src="/cleanic/public/scripts/components/employee/list-employees.js"></script>
 
 <script src="/cleanic/public/scripts/components/contact/list-contacts.js"></script>
 
+<script src="/cleanic/public/scripts/components/scheduling/list-schedules.js"></script>
+
+<script src="/cleanic/public/scripts/components/employee/employee-add.js"></script>
+
 <script src="/cleanic/public/scripts/components/contact/contact-add.js"></script>
 
-<script src="/cleanic/public/scripts/components/scheduling/list-schedules.js"></script>
+<script src="/cleanic/public/scripts/components/scheduling/schedule-add.js"></script>
 
 <script src="/cleanic/public/scripts/scripts.js"></script>

@@ -3,11 +3,7 @@
   <div class="form-group">
     <label for="scheduling-specialty">Especialidade Médica:<span class="color-red"> *</span></label>
     <select class="form-control" id="scheduling-specialty" required>
-      <option></option>
-      <option>Especialidade 1</option>
-      <option>Especialidade 2</option>
-      <option>Especialidade 3</option>
-      <option>Especialidade 4</option>
+
     </select>
   </div>
   <div class="form-group">

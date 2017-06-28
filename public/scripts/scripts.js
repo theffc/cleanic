@@ -12,13 +12,13 @@ $(document).ready(function() {
 		var components = [
 			MainPaginator,
 			GalleryBehavior,
-			SchedulingBehavior,
 			LoginBehavior,
-			RegisterEmployee,
 			ListEmployees,
 			ListContacts,
 			ListSchedules,
-			ContactAdd
+			EmployeeAdd,
+			ContactAdd,
+			ScheduleAdd
 		];
 
 		initializeComponents(components);

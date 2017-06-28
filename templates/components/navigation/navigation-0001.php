@@ -21,7 +21,7 @@
 					<a href="#contact" data-nav-paginator>Contato</a>
 				</li>
 				<li class="" data-nav-holder-paginator>
-					<a href="#scheduling" data-nav-paginator>Agendamento</a>
+					<a href="#scheduling" data-schedule-add-button data-nav-paginator>Agendamento</a>
 				</li>
 			</ul>
 			<ul class="nav navbar-nav navbar-right">
