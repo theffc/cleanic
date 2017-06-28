@@ -5,7 +5,7 @@
 	- OK - funcionario-service: recebe todas as possíveis especialidades médicas (as quais são obtidas de acordo com todos os médicos cadastrados)
 	- OK - funcionario-service: fornece uma especialidade médica, e recebe os médicos daquela especialidade
 	- fornece um médico, e recebe todos os horários disponíveis daquele médico
-	- fornece um formulário de agendamento, e consequentemente informações para cadastro de um novo cliente (paciente)
+	- OK - fornece um formulário de agendamento, e consequentemente informações para cadastro de um novo cliente (paciente)
 
 ## Tela de Contato
 	- OK - contato-service: fornece um formulário simples para cadastrar um Contato
