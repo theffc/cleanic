@@ -13,7 +13,8 @@ $(document).ready(function() {
 			MainPaginator,
 			GalleryBehavior,
 			SchedulingBehavior,
-			LoginBehavior
+			LoginBehavior,
+			EmployeeBehavior
 		];
 
 		initializeComponents(components);

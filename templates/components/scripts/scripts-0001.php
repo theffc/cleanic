@@ -15,4 +15,6 @@
 
 <script src="/cleanic/public/scripts/components/login/login-behavior.js"></script>
 
+<script src="/cleanic/public/scripts/components/employee/employee-behavior.js"></script>
+
 <script src="/cleanic/public/scripts/scripts.js"></script>

@@ -2,15 +2,36 @@
 
 function LoginBehavior($holder) {
 	this.$holder = $($holder || document.body);
+	this.$loginForm = null;
 };
 
 LoginBehavior.prototype = {
 
-	bindEvents: function() {
+	onLoginError: function() {
 
 	},
 
+	onLoginSuccess: function() {
+
+	},
+
+	onSubmitLogin: function(event) {
+		var $element;
+		event.preventDefault();
+		$element = $(event.target);
+		//TODO chamada de serviço
+	},
+
+	bindEvents: function() {
+		this.$loginForm.on('submit', $.proxy(this.onSubmitLogin, this));
+	},
+
+	setLoginForm: function() {
+		this.$loginForm = this.$holder.find('[data-login-form]');
+	},
+
 	init: function() {
+		this.setLoginForm();
 		this.bindEvents();
 	}
 };
