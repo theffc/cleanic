@@ -63,7 +63,6 @@ function listEspecialidades(){
    while ($assoc = $result->fetch_assoc()) {
       array_push($especialidades, $assoc['especialidadeFunc']);
    }
-   print_r($especialidades);
    return $especialidades;
 }
 # TESTS
