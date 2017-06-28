@@ -31,6 +31,8 @@
 
 <script src="/cleanic/public/scripts/components/service/doctor-specs-service.js"></script>
 
+<script src="/cleanic/public/scripts/components/service/employee-add-service.js"></script>
+
 <script src="/cleanic/public/scripts/components/service/available-time-service.js"></script>
 
 <script src="/cleanic/public/scripts/components/pagination/main-paginator.js"></script>

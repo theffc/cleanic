@@ -7,6 +7,8 @@ function EmployeeAdd($holder) {
 	this.$employeeNeighborhood = null;
 	this.$employeeCity = null;
 	this.cepService = new CepService();
+	this.employeeAddService = new EmployeeAddService();
+	this.helper = new HelperFs();
 };
 
 EmployeeAdd.prototype = {
@@ -69,10 +71,27 @@ EmployeeAdd.prototype = {
 		}
 	},
 
+	onAddEmployeeError: function(message) {
+		$('#error-modal').modal('show');
+	},
+
+	onAddEmployeeSuccess: function(data) {
+		$('#success-modal').modal('show');
+	},
+
+	doAddEmployee: function($form) {
+		var params;
+		params = JSON.stringify(this.helper.serializeFormJson($form));
+
+		this.employeeAddService.addEmployee(params)
+			.then($.proxy(this.onAddEmployeeSuccess, this), $.proxy(this.onAddEmployeeError, this));
+	},
+
 	onSubmitNewEmployee: function(event) {
 		var $element;
 		event.preventDefault();
 		$element = $(event.target);
+		this.doAddEmployee($element);
 	},
 
 	onChangeEmployeeJob: function(event) {

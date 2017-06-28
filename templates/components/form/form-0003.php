@@ -1,26 +1,27 @@
 <form class="form-0001" data-register-employee-form>
 	<fieldset>
 		<h3 class="">Dados Pessoais:</h3>
+		<input type="hidden" class="form-control" name="idFunc" id="employee-id" value="0" required>
 		<div class="form-group">
 		  <label for="employee-name">Nome:<span class="color-red"> *</span></label>
-		  <input type="text" class="form-control" name="employee-name" id="employee-name" required>
+		  <input type="text" class="form-control" name="nomeFunc" id="employee-name" required>
 		</div>
 		<div class="form-group">
 			<label for="employee-birthday">Data de nascimento:<span class="color-red"> *</span></label>
-			<input type="date" class="form-control" name="employee-birthday" id="employee-birthday" required>
+			<input type="date" class="form-control" name="dataNascFunc" id="employee-birthday" required>
 		</div>
 		<div class="form-group">
 			<label for="employee-gender-m">Sexo:<span class="color-red"> *</span></label>
 		</div>
 		<div class="form-group">
 			<label for="employee-gender-m">Masculino:</label>
-			<input type="radio" class="" name="employee-gender" id="employee-gender-m" value="M" required>
+			<input type="radio" class="" name="sexoFunc" id="employee-gender-m" value="M" required>
 			<label for="employee-gender-f">Feminino:</label>
-			<input type="radio" class="" name="employee-gender" id="employee-gender-f" value="F" required>
+			<input type="radio" class="" name="sexoFunc" id="employee-gender-f" value="F" required>
 		</div>
 		<div class="form-group">
 		  <label for="employee-status">Estado civil:<span class="color-red"> *</span></label>
-		  <select class="form-control" name="employee-status" id="employee-status" required>
+		  <select class="form-control" name="estadoCivilFunc" id="employee-status" required>
 		    <option></option>
 		    <option>Solteiro(a)</option>
 		    <option>Casado(a)</option>
@@ -30,17 +31,17 @@
 		</div>
 		<div class="form-group">
 		  <label for="employee-job">Cargo:<span class="color-red"> *</span></label>
-		  <select class="form-control" name="employee-job" id="employee-job" data-employee-job required>
+		  <select class="form-control" name="cargoFunc" id="employee-job" data-employee-job required>
 		    <option></option>
-		    <option>Médico</option>
+		    <option>Medico</option>
 		    <option>Enfermeiro</option>
-		    <option>Secretário</option>
+		    <option>Secretario</option>
 		    <option>Outro</option>
 		  </select>
 		</div>
 		<div class="form-group hidden" data-employee-spec>
 			<label for="employee-medical-spec">Especialidade Médica:<span class="color-red"> *</span></label>
-			<input type="text" class="form-control" name="employee-medical-spec" id="employee-medical-spec" novalidate="novalidate">
+			<input type="text" class="form-control" name="especialidadeFunc" id="employee-medical-spec" novalidate="novalidate">
 		</div>
 	</fieldset>
 
@@ -48,26 +49,26 @@
 		<h3 class="">Documentos:</h3>
 		<div class="form-group">
 			<label for="employee-cpf">CPF:<span class="color-red"> *</span></label>
-			<input type="text" class="form-control" name="employee-cpf" id="employee-cpf" required>
+			<input type="text" class="form-control" name="CPF" id="employee-cpf" required>
 		</div>
 		<div class="form-group">
 			<label for="employee-rg">RG:<span class="color-red"> *</span></label>
-			<input type="text" class="form-control" name="employee-rg" id="employee-rg" required>
+			<input type="text" class="form-control" name="RG" id="employee-rg" required>
 		</div>
 		<div class="form-group">
 			<label for="employee-other-doc">Outro:<span class="color-red"> *</span></label>
-			<input type="text" class="form-control" name="employee-other-doc" id="employee-other-doc" required>
+			<input type="text" class="form-control" name="docsFunc" id="employee-other-doc" required>
 		</div>
 	</fieldset>
 	<fieldset>
 		<h3 class="">Endereço:</h3>
 		<div class="form-group">
 			<label for="employee-cep">CEP:<span class="color-red"> *</span></label>
-			<input type="text" class="form-control" name="employee-cep" id="employee-cep" maxlength="8" data-employee-cep required>
+			<input type="text" class="form-control" id="employee-cep" maxlength="8" data-employee-cep required>
 		</div>
 		<div class="form-group">
 		  <label for="employee-street-type">Tipo de logradouro:<span class="color-red"> *</span></label>
-		  <select class="form-control" name="employee-street-type" id="employee-street-type" required>
+		  <select class="form-control" id="employee-street-type" required>
 		    <option></option>
 		    <option>Rua</option>
 		    <option>Avenida</option>
@@ -76,27 +77,27 @@
 		</div>
 		<div class="form-group">
 			<label for="employee-street">Logradouro:<span class="color-red"> *</span></label>
-			<input type="text" class="form-control" name="employee-street" id="employee-street" data-employee-street required>
+			<input type="text" class="form-control" id="employee-street" data-employee-street required>
 		</div>
 		<div class="form-group">
 			<label for="employee-address-num">Número:<span class="color-red"> *</span></label>
-			<input type="text" class="form-control" name="employee-address-num" id="employee-address-num" required>
+			<input type="text" class="form-control" id="employee-address-num" required>
 		</div>
 		<div class="form-group">
 			<label for="employee-address-complement">Complemento:<span class="color-red"> *</span></label>
-			<input type="text" class="form-control" name="employee-address-complement" id="employee-address-complement" required>
+			<input type="text" class="form-control" id="employee-address-complement" required>
 		</div>
 		<div class="form-group">
 			<label for="employee-neighborhood">Bairro:<span class="color-red"> *</span></label>
-			<input type="text" class="form-control" name="employee-neighborhood" id="employee-neighborhood" data-employee-neighborhood required>
+			<input type="text" class="form-control" id="employee-neighborhood" data-employee-neighborhood required>
 		</div>
 		<div class="form-group">
 			<label for="employee-city">Cidade:<span class="color-red"> *</span></label>
-			<input type="text" class="form-control" name="employee-city" id="employee-city" data-employee-city required>
+			<input type="text" class="form-control" id="employee-city" data-employee-city required>
 		</div>
 		<div class="form-group">
 			<label for="employee-state">Estado:<span class="color-red"> *</span></label>
-			<input type="text" class="form-control" name="employee-state" id="employee-state" required>
+			<input type="text" class="form-control" id="employee-state" required>
 		</div>
 	</fieldset>
 	<button type="submit" class="btn btn-primary align-right">Enviar</button>
