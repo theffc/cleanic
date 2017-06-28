@@ -5,6 +5,8 @@ function ScheduleAdd($holder) {
 	this.doctorSpecsService = new DoctorSpecsService();
 	this.listDoctorsService = new ListDoctorsService();
 	this.availableTimeService = new AvailableTimeService();
+	this.scheduleAddService = new ScheduleAddService();
+	this.helper = new HelperFs();
 };
 
 ScheduleAdd.hoursDict = {
@@ -103,7 +105,7 @@ ScheduleAdd.prototype = {
 		$element.append('<option value=""></option>');
 		for (var i = 0; i < data.length; i++) {
 			$element.append(
-				'<option data-id="' + data[i]['idFunc'] + '" value="' + data[i]['nomeFunc'] + '">' + data[i]['nomeFunc'] + '</option>'
+				'<option data-id="' + data[i]['idFunc'] + '" value="' + data[i]['idFunc'] + '">' + data[i]['nomeFunc'] + '</option>'
 			);
 		}
 	},
@@ -129,10 +131,27 @@ ScheduleAdd.prototype = {
 		value !== ''? this.retrieveMedicList(value) : this.resetDoctorField();
 	},
 
+	onAddScheduleError: function(message) {
+		$('#error-modal').modal('show');
+	},
+
+	onAddScheduleSuccess: function(data) {
+		$('#success-modal').modal('show');
+	},
+
+	doAddSchedule: function($form) {
+		var params;
+		params = JSON.stringify(this.helper.serializeFormJson($form));
+
+		this.scheduleAddService.addSchedule(params)
+			.then($.proxy(this.onAddScheduleSuccess, this), $.proxy(this.onAddScheduleError, this));
+	},
+
 	onSubmitNewSchedule: function(event) {
 		var $element;
 		event.preventDefault();
 		$element = $(event.target);
+		this.doAddSchedule($element);
 	},
 
 	onGetSpecsError: function(message) {

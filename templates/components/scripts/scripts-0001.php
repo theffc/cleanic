@@ -25,6 +25,8 @@
 
 <script src="/cleanic/public/scripts/components/service/contact-add-service.js"></script>
 
+<script src="/cleanic/public/scripts/components/service/schedule-add-service.js"></script>
+
 <script src="/cleanic/public/scripts/components/service/list-doctors-service.js"></script>
 
 <script src="/cleanic/public/scripts/components/service/doctor-specs-service.js"></script>

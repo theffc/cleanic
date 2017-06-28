@@ -8,27 +8,27 @@
   </div>
   <div class="form-group">
     <label for="scheduling-doctor">Médico:<span class="color-red"> *</span></label>
-    <select class="form-control" id="scheduling-doctor" required>
+    <select class="form-control" id="scheduling-doctor" name="codFuncionario" required>
 
     </select>
   </div>
   <div class="form-group">
     <label for="scheduling-date">Data da consulta:<span class="color-red"> *</span></label>
-    <input type="date" class="form-control" id="scheduling-date" required>
+    <input type="date" class="form-control" id="scheduling-date" name="dataAgendamento" required>
   </div>
   <div class="form-group">
     <label for="scheduling-time">Horário:<span class="color-red"> *</span></label>
-    <select class="form-control" id="scheduling-time" required>
+    <select class="form-control" id="scheduling-time" name="horaAgendamento" required>
 
     </select>
   </div>
   <div class="form-group">
     <label for="scheduling-name">Nome do paciente:<span class="color-red"> *</span></label>
-    <input type="text" class="form-control" id="scheduling-name" required>
+    <input type="text" class="form-control" id="scheduling-name" name="nomePac" required>
   </div>
   <div class="form-group">
     <label for="scheduling-phone">Telefone do paciente:<span class="color-red"> *</span></label>
-    <input type="text" class="form-control" id="scheduling-phone" required>
+    <input type="text" class="form-control" id="scheduling-phone" name="telPac" required>
   </div>
   <button type="submit" class="btn btn-primary align-right">Enviar</button>
 </form>
