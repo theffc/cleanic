@@ -3,6 +3,7 @@
 function LoginBehavior($holder) {
 	this.$holder = $($holder || document.body);
 	this.$loginForm = null;
+	this.service = new LoginService();
 };
 
 LoginBehavior.prototype = {
