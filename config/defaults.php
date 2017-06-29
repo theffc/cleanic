@@ -1,8 +1,8 @@
 <?php
 
-$dbServer = "localhost";
-$dbUser = "root";
-$dbPassword = "";
+$dbServer = "fdb16.awardspace.net";
+$dbUser = "2374655_cleanic";
+$dbPassword = "cleanicbfb15";
 $dbName = "2374655_cleanic";
 
 function connectToDatabase() {
