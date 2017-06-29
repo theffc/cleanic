@@ -108,6 +108,14 @@ EmployeeAdd.prototype = {
 		this.$holder.on('change', '[data-employee-cep]', $.proxy(this.onChangeCEP, this));
 	},
 
+	setMaximumBirthday: function() {
+		var $dateField = $('#employee-birthday');
+
+		$dateField.prop('max', function() {
+        	return new Date().toJSON().split('T')[0];
+    	});
+	},
+
 	setEmployeeElements: function() {
 		this.$employeeSpec = this.$holder.find('[data-employee-spec]');
 		this.$employeeStreet = this.$holder.find('[data-employee-street]');
@@ -117,6 +125,7 @@ EmployeeAdd.prototype = {
 
 	init: function() {
 		this.setEmployeeElements();
+		this.setMaximumBirthday();
 		this.bindEvents();
 	}
 };

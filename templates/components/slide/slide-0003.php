@@ -1,5 +1,5 @@
 <div class="item">
-   <img class="third-slide" src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" alt="Third slide">
+   <img class="third-slide" src="/cleanic/public/media/img3.jpg" alt="Third slide">
    <div class="container">
       <div class="carousel-caption">
          <h1>Sem espera</h1>
