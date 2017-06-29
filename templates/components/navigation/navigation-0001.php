@@ -1,3 +1,7 @@
+<?php
+	session_start();
+?>
+
 <nav class="navbar navbar-default navbar-fixed-top">
 	<div class="container">
 		<div class="navbar-header">
@@ -25,9 +29,15 @@
 				</li>
 			</ul>
 			<ul class="nav navbar-nav navbar-right">
-				<li class="active">
-					<a data-toggle="modal" data-target="#login-modal" href="#login" data-login-button>Login</a>
-				</li>
+				<?php if (!isset($_SESSION['user'])) { ?>
+					<li class="active">
+						<a data-toggle="modal" data-target="#login-modal" href="#login" data-login-button>Login</a>
+					</li>
+				<?php } else { ?>
+					<li class="active">
+						<a href="/cleanic/public/admin/">Ir para o Admin</a>
+					</li>				
+				<?php } ?>
 			</ul>
 		</div>
 	</div>
