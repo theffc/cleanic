@@ -8,7 +8,7 @@ $.extend(EmployeeAddService.prototype, Service.prototype, {
 
 	addEmployee: function(params) {
 
-		var serviceUrl = '/cleanic/public/api/funcionario-add.php',
+		var serviceUrl = 'http://cleanic.scienceontheweb.net/cleanic/public/api/funcionario-add.php',
 			dfd = $.Deferred(),
 			_this = this;
 

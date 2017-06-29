@@ -8,7 +8,7 @@ $.extend(LoginService.prototype, Service.prototype, {
 
 	loginUser: function(params) {
 
-		var serviceUrl = '/cleanic/public/api/login.php',
+		var serviceUrl = 'http://cleanic.scienceontheweb.net/cleanic/public/api/login.php',
 			dfd = $.Deferred(),
 			_this = this;
 

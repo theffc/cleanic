@@ -8,7 +8,7 @@ $.extend(ListSchedulesService.prototype, Service.prototype, {
 
 	getSchedules: function(params) {
 
-		var serviceUrl = '/cleanic/public/api/agendamentos-list.php',
+		var serviceUrl = 'http://cleanic.scienceontheweb.net/cleanic/public/api/agendamentos-list.php',
 			dfd = $.Deferred(),
 			_this = this;
 

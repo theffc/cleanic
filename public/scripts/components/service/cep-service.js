@@ -8,7 +8,7 @@ $.extend(CepService.prototype, Service.prototype, {
 
 	getCepInfo: function(params) {
 
-		var serviceUrl = '/cleanic/public/api/cep-search.php',
+		var serviceUrl = 'http://cleanic.scienceontheweb.net/cleanic/public/api/cep-search.php',
 			dfd = $.Deferred(),
 			_this = this;
 

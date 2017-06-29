@@ -8,7 +8,7 @@ $.extend(ListDoctorsService.prototype, Service.prototype, {
 
 	getDoctors: function(params) {
 
-		var serviceUrl = '/cleanic/public/api/medico-list.php',
+		var serviceUrl = 'http://cleanic.scienceontheweb.net/cleanic/public/api/medico-list.php',
 			dfd = $.Deferred(),
 			_this = this;
 

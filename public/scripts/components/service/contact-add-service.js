@@ -8,7 +8,7 @@ $.extend(ContactAddService.prototype, Service.prototype, {
 
 	addContact: function(params) {
 
-		var serviceUrl = '/cleanic/public/api/contact-add.php',
+		var serviceUrl = 'http://cleanic.scienceontheweb.net/cleanic/public/api/contact-add.php',
 			dfd = $.Deferred(),
 			_this = this;
 

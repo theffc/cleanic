@@ -8,7 +8,7 @@ $.extend(AvailableTimeService.prototype, Service.prototype, {
 
 	getAvailableTimes: function(params) {
 
-		var serviceUrl = '/cleanic/public/api/agendamentos-disponiveis-medico.php',
+		var serviceUrl = 'http://cleanic.scienceontheweb.net/cleanic/public/api/agendamentos-disponiveis-medico.php',
 			dfd = $.Deferred(),
 			_this = this;
 

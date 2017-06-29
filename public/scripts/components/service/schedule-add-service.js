@@ -8,7 +8,7 @@ $.extend(ScheduleAddService.prototype, Service.prototype, {
 
 	addSchedule: function(params) {
 
-		var serviceUrl = '/cleanic/public/api/agendamento-add.php',
+		var serviceUrl = 'http://cleanic.scienceontheweb.net/cleanic/public/api/agendamento-add.php',
 			dfd = $.Deferred(),
 			_this = this;
 

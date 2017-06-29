@@ -14,7 +14,7 @@ LoginBehavior.prototype = {
 	},
 
 	onLoginSuccess: function() {
-		window.location.href = '/cleanic/public/admin';
+		window.location.href = 'http://cleanic.scienceontheweb.net/cleanic/public/admin';
 	},
 
 	doLogin: function($form) {

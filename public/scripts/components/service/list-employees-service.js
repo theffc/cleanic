@@ -8,7 +8,7 @@ $.extend(ListEmployeesService.prototype, Service.prototype, {
 
 	getEmployees: function(params) {
 
-		var serviceUrl = '/cleanic/public/api/funcionario-list.php',
+		var serviceUrl = 'http://cleanic.scienceontheweb.net/cleanic/public/api/funcionario-list.php',
 			dfd = $.Deferred(),
 			_this = this;
 
